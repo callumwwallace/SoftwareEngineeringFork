@@ -10,7 +10,7 @@ int main()
 	//Shift left 56 bits and store in a 64bit variable
 	//
 	//We expect the output to be 0b10101100 00000000 00000000 00000000 00000000 00000000 00000000 00000000
-	unsigned long long x = c << 56;
+	unsigned long long x = (unsigned long long)c << 56;
 	displayAndCompare(x);
 
 	//Solution is in the lab notes
