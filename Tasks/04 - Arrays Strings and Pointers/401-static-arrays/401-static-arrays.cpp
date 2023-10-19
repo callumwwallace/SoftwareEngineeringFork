@@ -1,6 +1,22 @@
 #include <iostream>
 using namespace std;
 
+int grabArrTotVal(int arr[]) {
+    int arrTot = 0;
+    for (int i = 0; i < sizeof(arr); i++)
+    {
+        arrTot += arr[i];
+    }
+    return arrTot;
+}
+
+float grabArrMean(int arr[]) {
+    int arrTot = grabArrTotVal(arr);
+    int arrSize = sizeof(arr);
+    float rMean = (float)arrTot / (float)arrSize;
+    return rMean;
+}
+
 int main()
 {
     //Create and initialise an array
@@ -22,20 +38,25 @@ int main()
         int next = nums[n];                                             //Read by de-referencing
         cout << "Element " << n << " of nums = " << next << endl;       //Write to terminal
     }
-
+    int currentArrTot = grabArrTotVal(nums);
+    float currentArrMean = grabArrMean(nums);
+    cout << "arr total: " << currentArrTot << endl;
+    cout << "arr mean: " << currentArrMean << endl;
     //Modify each element of the array
     for (unsigned int n = 0; n < N; n++) {
         int newValue = nums[n] + 1;             //Read (by de-referencing) and add one    
         nums[n] = newValue;                     //Write into the array (again, using de-referencing)
     }
-
+    currentArrTot = grabArrTotVal(nums);
+    currentArrMean = grabArrMean(nums);
     cout << "Add one...." << endl;
 
     //Write out all elements of the array again - shorter version this time
     for (unsigned int n = 0; n < N; n++) {
         cout << "Element " << n << " of nums = " << nums[n] << endl;
     }
-
+    cout << "arr total: " << currentArrTot << endl;
+    cout << "arr mean: " << currentArrMean << endl;
 
 
     // **************************************************************************
