@@ -1,30 +1,35 @@
 #include <iostream>
 using namespace std;
 
-void displayBanner(int stringLen)
-{
-	for (unsigned int n = 0; n < (stringLen + 4); n++) {
-		cout << "*";
-	}
-	cout << endl;
+int L;		//This is not an ideal location - we will soon address this
+
+double add(double x, double y) {
+	return x + y;
+}
+
+void starBox(string text) {
+
+	int length = add(text.length(), 4);
+	// c++ lambda function
+	auto fn = [length]() {
+		for (size_t i = 0; i < length; i++)
+		{
+			cout << "*";
+		}
+		cout << endl;
+		};
+
+	fn();
+	cout << "* " + text + " *" << endl;
+	fn();
+
 }
 
 int main()
 {
 	const string message = "Welcome to Computer Science";
 
-	//Get the length of the string
-	int L = message.length();			//L is now a LOCAL variable
-
-	//Write the banner above
-	displayBanner(L);
-
-	cout << "* ";				//Leading *
-	cout << message;			//Message
-	cout << " *" << endl;		//Trailing *
-
-	//Write the banner below
-	displayBanner(L);
+	starBox(message);
 
 	//Tell the calling shell all is well
 	return 0;
