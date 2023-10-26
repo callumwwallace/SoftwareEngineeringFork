@@ -129,6 +129,9 @@
   <ItemGroup>
     <ClCompile Include="05-AppendingFiles.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="myfiles.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
