@@ -64,6 +64,24 @@ int main()
         return -1;
     }
 
+    //reuse pos & following
+    pos = dataString.find("Area:");
+    if (pos == -1) {
+        cerr << "Identifier Area: is missing from file" << endl;
+        return -1;
+    }
+    following = dataString.substr(pos);
+    string strArea, strSubject;
+    istringstream iss2(following);
+    iss2 >> strArea >> strSubject;
+    if (iss2.fail()) {
+        cerr << "error iss2 fail" << endl;
+        cout << "error iss2 fail" << endl;
+        return -1;
+    }
+    cout << "fsubject: " << strSubject << endl;
+
+
     // Done
     cout << "All is well!" << endl;
     return 0;

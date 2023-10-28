@@ -48,6 +48,10 @@ int main()
             // Read the next word
             // If successful, try to convert to an integer then break from the while loop
         }
+        if (nextWord == "1000") {
+            int x = stoi(nextWord) + 1;
+            cout << "New module code: " << x << endl;
+        }
     }
 
     // Done
