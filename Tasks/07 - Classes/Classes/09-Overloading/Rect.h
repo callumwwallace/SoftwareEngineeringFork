@@ -24,6 +24,12 @@ namespace COMP1000 {
             }
         }
     public:
+        void updateArea(int w, int h) {
+            this->width = w;
+            this->height = h;
+            updateArea();
+        }
+
         //Constructor - v1 (has an additional parameter used for file logging)
         Rect(double w, double h, string id) {
             //Log message to terminal

@@ -15,6 +15,7 @@ int main()
     Rect r2(2.0, 3.0);
     r2.display();
     r2.setHeight(10.0f);
+    r2.setWidth(5.0f);
     r2.display();
 }
 
