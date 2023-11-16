@@ -23,10 +23,25 @@ public:
         }
     }
 
+    void setAge(int age) {
+        if (age != _age && (age > 0 && age <= 30)) {
+            cout << "Age has been changed from " << _age << " to " << age << endl;
+            _age = age;
+        }
+        else {
+            cout << "error: invalid age range 0-30" << endl; 
+        }
+    }
+
     string getName() {
         //Read only copy returned as = does a copy for string
         return _name;
     }
+
+    int getAge() {
+        return _age; 
+    }
+
 };
 
 
@@ -67,4 +82,7 @@ int main()
     Pet p1("Carrot", 2);
     Dog d1("Scrapper", 5);
     Cat c1("Furry", 3);
+
+    c1.setAge(31);
+    c1.setAge(20);
 }
