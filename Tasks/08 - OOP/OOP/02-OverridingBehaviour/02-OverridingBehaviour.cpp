@@ -76,7 +76,16 @@ public:
 
 // Write solution here
 
-
+class Tortoise : public Pet {
+public:
+    Tortoise(string n, int age) : Pet(n, age) {
+        cout << "Constructor for Tortoise " << n << endl;
+    }
+    
+    void chomp() {
+        cout << _name << "says Chomp!" << endl;
+    }
+};
 
 int main()
 {
@@ -89,5 +98,6 @@ int main()
     c1.setAge(4);
 
     //Happy birthday Speedy the Tortoise
+    Tortoise t1("Jackson", 30);
     //t1.setAge(101);
 }
